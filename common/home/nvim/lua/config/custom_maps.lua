@@ -1,0 +1,1 @@
+--vim.keymap.set('n', '<leader>e', function () vim.cmd("Explore") end, {buffer = true})
