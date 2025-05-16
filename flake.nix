@@ -1,5 +1,5 @@
 {
-  description = "Nix config using plasma 6 as the desktop";
+  description = "Nix config using Mate as the desktop and i3 as the window manager";
 
   inputs = {
     # Nixpkgs
@@ -55,6 +55,22 @@
         ];
       };
 
+      nighthound = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+
+        modules = [
+          ./nighthound/configuration.nix
+        ];
+      };
+
+      malevolence = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+
+        modules = [
+          ./malevolence/configuration.nix
+        ];
+      };
+
     };
 
     # Standalone home-manager configuration entrypoint
@@ -99,6 +115,34 @@
         modules = [
           inputs.plasma-manager.homeManagerModules.plasma-manager
           ./prevalance/home.nix
+        ];
+      };
+
+      "alxjron@nighthound" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          username = "alxjron";
+          homeDir = "/home/alxjron";
+        };
+
+        modules = [
+          inputs.plasma-manager.homeManagerModules.plasma-manager
+          ./nighthound/home.nix
+        ];
+      };
+
+      "alxjron@malevolence" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          username = "alxjron";
+          homeDir = "/home/alxjron";
+        };
+
+        modules = [
+          inputs.plasma-manager.homeManagerModules.plasma-manager
+          ./malevolence/home.nix
         ];
       };
 
