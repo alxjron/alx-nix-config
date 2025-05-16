@@ -11,7 +11,8 @@
 
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      #./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ../common/system/desktop.nix
     ];
 
@@ -24,6 +25,11 @@
 
   networking.hostName = "newmoon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # It is a guest machine add some stuff here
+  # to reduce problems?
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
