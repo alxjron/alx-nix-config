@@ -45,11 +45,12 @@
     homeDirectory = specialArgs.homeDir;
   };
 
-  programs.steam.enable = true;
+  # Steam doesn't exist on home-manager >:(
+  #programs.steam.enable = true;
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ 
-    minecraft
+  home.packages = with pkgs; [  
+    prismlauncher   # Official Minecraft launcher is broken on NixOS
     minetest
   ];
   
