@@ -73,8 +73,7 @@
     fd
 
     # For markdown preview
-    nodejs-slim_23
-    yarn
+    deno
 
     lua-language-server
     nil
