@@ -16,6 +16,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../common/home/desktop.nix
+    ../common/home/generalApps.nix
+    ../common/home/neovim.nix
   ];
 
   nixpkgs = {
