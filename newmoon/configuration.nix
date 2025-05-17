@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -30,6 +30,8 @@
   # to reduce problems?
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
+  services.xserver.videoDrivers = [ "qxl" ];
+  services.picom.enable = lib.mkForce false;    # Picom does not work very well on kvm virtual machines
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
