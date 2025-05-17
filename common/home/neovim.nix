@@ -59,9 +59,12 @@
     };
   };
 
-  xdg.mime.defaultApplications = {
-    "text/plain" = "nvim.desktop";
-    "text/markdown" = "nvim.desktop";
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+        "text/plain" = ["nvim.desktop"];
+        "text/markdown" = ["nvim.desktop"];
+    };
   };
 
   programs.neovim = {
