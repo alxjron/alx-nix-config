@@ -61,6 +61,7 @@
     gpt4all
 
     godot_4
+    blender
   ];
 
   programs.home-manager.enable = true;
