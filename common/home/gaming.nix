@@ -16,6 +16,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
+    #inputs.ninecraft.homeManagerModule
   ];
 
   nixpkgs = {
@@ -53,6 +54,29 @@
     prismlauncher   # Official Minecraft launcher is broken on NixOS
     minetest
   ];
+
+#  programs.ninecraft = {
+#    enable = true;
+#    version = "0.6.0";
+#    apk = lib.fetchzip {
+#      url = "https://archive.org/download/MCPEAlpha/PE-a0.7.0-x86.apk";
+#      hash = lib.fakeHash;
+#    };
+#    options = {
+#      "mp_username"="Steve";
+#      "mp_server"="Steve";
+#      "mp_server_visible_default"=true;
+#      "gfx_fancygraphics"=true;
+#      "gfx_lowquality"=false;
+#      "ctrl_sensitivity"=0.5;
+#      "ctrl_invertmouse"=false;
+#      "ctrl_islefthanded"=false;
+#      "ctrl_usetouchscreen"=false;
+#      "ctrl_usetouchjoypad"=false;
+#      "feedback_vibration"=false;
+#      "game_difficulty"=4;
+#    };
+#  };
   
 
   # Nicely reload system units when changing configs

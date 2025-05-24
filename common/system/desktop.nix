@@ -53,6 +53,10 @@
   security.rtkit.enable = true;
 
   programs.thunar.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   environment.systemPackages = with pkgs; [
     rofi
