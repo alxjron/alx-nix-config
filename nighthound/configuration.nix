@@ -25,8 +25,10 @@
   boot.loader.grub.device = "nodev";
   #boot.resumeDevice = "/dev/disk/by-label/swap";
 
-  boot.kernelParams = [ "amdgpu" ];
+  boot.kernelParams = [ "amdgpu" "amd_iommu=off" ];
   powerManagement.enable = true;
+
+  hardware.graphics.enable = true;
 
   networking.hostName = "nighthound"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

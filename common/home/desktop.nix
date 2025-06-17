@@ -61,6 +61,13 @@ in
   #    iconTheme = "breeze-dark";
   #  };
   #};
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+    };
+  };
+
   
   gtk = {
     enable = true;

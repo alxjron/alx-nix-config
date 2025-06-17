@@ -64,6 +64,7 @@
     defaultApplications = {
         "text/plain" = ["nvim.desktop"];
         "text/markdown" = ["nvim.desktop"];
+        "application/x-zerosize" = ["nvim.desktop"];
     };
   };
 
