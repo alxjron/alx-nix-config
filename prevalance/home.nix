@@ -59,7 +59,7 @@
     tor
     gpt4all
 
-    godot_4
+    godot-mono
     texlive.combined.scheme-full
   ];
 
