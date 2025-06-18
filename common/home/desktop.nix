@@ -76,7 +76,8 @@ in
       name = "Graphite-Dark";
     };
     iconTheme = {
-      package = pkgs.iconpack-obsidian;
+      # Again icon pack is broken
+      package = alxpkgs.iconpack-obsidian;
       name = "Obsidian-Amber";
     };
   };

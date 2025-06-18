@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{config, pkgs, ...}: 
+let 
+  alxpkgs = import ../../pkgs {inherit pkgs;}; 
+in
+{
 
   services = {
     displayManager.defaultSession = "mate";
@@ -45,7 +49,7 @@
     HibernateDelaySec=1h
   '';
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -67,7 +71,10 @@
     xclip
     alacritty
 
-    iconpack-obsidian
+    # The package is broken now because of course it is
+    #iconpack-obsidian
+    alxpkgs.iconpack-obsidian
+
     graphite-gtk-theme
     graphite-kde-theme
     kdePackages.ocean-sound-theme
