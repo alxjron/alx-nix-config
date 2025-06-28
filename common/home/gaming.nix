@@ -52,7 +52,8 @@
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [  
     prismlauncher   # Official Minecraft launcher is broken on NixOS
-    minetest
+    #minetest
+    luanti
   ];
 
 #  programs.ninecraft = {
