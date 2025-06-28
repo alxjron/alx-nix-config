@@ -19,6 +19,7 @@
     ../common/home/desktop.nix
     ../common/home/generalApps.nix
     ../common/home/neovim.nix
+    ../common/home/gaming.nix
   ];
 
   nixpkgs = {
