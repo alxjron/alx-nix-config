@@ -12,7 +12,8 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      ../common/system/desktop.nix
+      #../common/system/desktop.nix
+      ../common/system/desktop-gnome.nix
     ];
 
   # Bootloader.
@@ -111,6 +112,7 @@
   # };
 
   # List services that you want to enable:
+  services.getty.autologinUser = "alxjron";
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

@@ -15,7 +15,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ../common/home/desktop.nix
+    #../common/home/desktop.nix
+    ../common/home/desktop-gnome.nix
     ../common/home/generalApps.nix
   ];
 
