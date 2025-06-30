@@ -112,7 +112,17 @@
   # };
 
   # List services that you want to enable:
-  services.getty.autologinUser = "alxjron";
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true; 
+  };
+
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "alxjron";
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -122,6 +132,14 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 47984 47989 47990 48010 ];
+    allowedUDPPortRanges = [
+      { from = 47998; to = 48010; }
+      { from = 8000; to = 8010; }
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

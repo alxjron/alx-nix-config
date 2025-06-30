@@ -92,7 +92,7 @@ in
     GTK_USE_PORTAL = 1;
   };
 
-  services.gnome.core-utilities.enable = false;
+  services.gnome.core-apps.enable = false;
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-characters

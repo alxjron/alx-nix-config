@@ -18,6 +18,7 @@
     #../common/home/desktop.nix
     ../common/home/desktop-gnome.nix
     ../common/home/generalApps.nix
+    ../common/home/neovim.nix
   ];
 
   nixpkgs = {
