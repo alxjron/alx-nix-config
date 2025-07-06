@@ -4,6 +4,7 @@ let
 in
 {
 
+  xdg.portal.enable = true;
   services = {
     displayManager.defaultSession = "mate";
     xserver = {
