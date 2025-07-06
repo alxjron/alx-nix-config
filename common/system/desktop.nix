@@ -70,6 +70,12 @@ in
   security.rtkit.enable = true;
 
   programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+  services.tumbler.enable = true; # Thumbnail support for images
+
   programs.appimage = {
     enable = true;
     binfmt = true;
