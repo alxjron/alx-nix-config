@@ -12,6 +12,7 @@
           tpmSupport = true;
         }).fd];
       };
+      #vhostUserPackages = with pkgs; [ virtiofsd ];
     };
   };
 
@@ -22,6 +23,7 @@
   programs.virt-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
+    virtiofsd
   ];
 
   system.stateVersion = "24.05";

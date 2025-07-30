@@ -11,4 +11,4 @@ if [[ -z $hostname ]]; then
     host=`hostname -s`
 fi
 
-home-manager switch --flake .#$user@$host
+home-manager switch -b backup --flake .#$user@$host

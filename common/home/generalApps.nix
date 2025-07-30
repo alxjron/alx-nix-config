@@ -64,6 +64,15 @@
     };
   };
 
+  # some nice shell functions
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      sd = "cd $(fd -t d | fzf)";
+      sdh = "cd $(fd -t d --search-path ~ | fzf)";
+      sdr = "cd $(fd -t d --search-path / | fzf)";
+    };
+  };
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [ 
@@ -90,6 +99,9 @@
     # torrent client idk which one
     zip
     unzip
+
+    fd
+    fzf
   ];
   
 
