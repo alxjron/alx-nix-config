@@ -26,7 +26,14 @@ in
       vSync = true;
     };
 
-    printing.enable = true;
+    printing = {
+      enable = true;
+      listenAddresses = [ "*:631" ];
+      allowFrom = [ "all" ];
+      browsing = true;
+      defaultShared = true;
+      openFirewall = true;
+    };
     avahi = {
       enable = true;
       nssmdns4 = true;
